@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Eliminar Retro Item</title>
+    <link rel="stylesheet" href="css/eliminarRetro_items.css">
+</head>
+<body>
+    <h2>Eliminar Retro Item por ID</h2>
+    <input type="text" id="retroItemId" placeholder="Ingrese el ID del retro_item">
+    <button onclick="eliminarRetroItem(id)">Eliminar</button>
+    <p id="mensaje"></p>
+    <h3>Lista de Retro Items</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>sprint_id</th>
+                <th>Categoria</th>
+                <th>Descripcion </th>
+                <th>Cumplida</th>
+                <th>fecha_revision</th>
+                <th>created_at</th>
+                <th>updated_at</th>
+            </tr>
+        </thead>
+        <tbody id="retroItemsTabla">
+            <!-- Aquí se mostrarán los retro_items -->
+        </tbody>
+    </table>
+    <script src="js/eliminarRetroitems.js"></script>
+     <a href="index.html">Volver al Inicio</a>
+</body>
+</html>
