@@ -1,0 +1,106 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f9fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Estilo del formulario */
+form[name="retroItemForm"] {
+    background: #fff;
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    width: 360px;
+    box-sizing: border-box;
+}
+
+/* Separación entre bloques */
+form div {
+    margin-bottom: 1.25rem;
+}
+
+/* Etiquetas */
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: #333;
+}
+
+/* Inputs, select y textarea */
+input[type="text"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+/* Focus para inputs, selects y textarea */
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #4caf50;
+    outline: none;
+}
+
+/* Textarea tamaño */
+textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+/* Checkbox label inline */
+input[type="checkbox"] {
+    transform: scale(1.2);
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
+/* Botones */
+button[type="submit"],
+button[type="reset"] {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.15s ease;
+    margin-right: 0.75rem;
+    font-family: inherit;
+}
+
+/* Botón Guardar */
+button[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+}
+
+/* Botón Cancelar */
+button[type="reset"] {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Hover efectos */
+button[type="submit"]:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+button[type="reset"]:hover {
+    background-color: #d32f2f;
+    transform: scale(1.05);
+}

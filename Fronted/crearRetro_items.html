@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Retro Item</title>
+    <link rel="stylesheet" href="css/crearRetroitems.css">
+</head>
+<body>
+    <form name="retroItemForm">
+        <div>
+         <label>Sprint:</label>
+        <select id="sprintSelect" name="sprint_id" required>
+        <option value="">-- Selecciona un sprint --</option>
+        </select>
+        </div>
+        <div>
+            <label>Categoría:</label>
+            <select name="categoria" required>
+                <option value="accion">Acción</option>
+                <option value="logro">Logro</option>
+                <option value="impedimento">Impedimento</option>
+                <option value="comentario">Comentario</option>
+                <option value="otro">Otro</option>
+            </select>
+        </div>
+        <div>
+            <label>Descripción:</label>
+            <textarea name="descripcion" required></textarea>
+        </div>
+        <div>
+            <label>Cumplida:</label>
+            <input type="checkbox" name="cumplida">
+        </div>
+        <div>
+            <label>Fecha de revisión:</label>
+            <input type="date" name="fecha_revision">
+        </div>
+        <button type="submit">Guardar</button>
+        <button type="reset" id="cancelarBtn">Cancelar</button>
+    </form>
+    <script src="js/crearRetro_items.js"></script>
+    <script>
+        // Llenar el select de sprints
+        fetch('http://127.0.0.1:8000/api/sprints')
+            .then(res => res.json())
+            .then(data => {
+                const select = document.getElementById('sprintSelect');
+                (data.data || []).forEach(sprint => {
+                    const option = document.createElement('option');
+                    option.value = sprint.id;
+                    option.textContent = `${sprint.id} - ${sprint.nombre}`;
+                    select.appendChild(option);
+                });
+            });
+    </script>
+
+    <script>
+        document.getElementById('cancelarBtn').onclick = function(e) {
+            e.preventDefault();
+            window.location.href = '../index.html';
+        };
+    </script>
+</body>
+</html>
