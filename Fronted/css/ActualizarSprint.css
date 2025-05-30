@@ -1,0 +1,132 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f9fc;
+    margin: 0;
+    min-height: 100vh;
+}
+
+h2, h3 {
+    color: #2c3e50;
+    margin-left: 20px;
+}
+
+#mensaje {
+    color: #c0392b;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+form {
+    background: #fff;
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    width: 380px;
+    box-sizing: border-box;
+    margin: 40px auto 20px auto;
+}
+
+form input[type="text"],
+form input[type="datetime-local"] {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+form input[type="text"]:focus,
+form input[type="datetime-local"]:focus {
+    border-color: #4caf50;
+    outline: none;
+}
+
+button[type="submit"] {
+    padding: 0.6rem 1.2rem;
+    background-color: #2980b9;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+}
+
+button[type="submit"]:hover {
+    background-color: #1c5980;
+    transform: scale(1.05);
+}
+
+table {
+    border-collapse: collapse;
+    width: 95%;
+    margin: 20px auto;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    text-align: left;
+}
+
+th {
+    background: #2980b9;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
+tr:hover {
+    background: #eaf6ff;
+}
+
+.navegacion-enlaces {
+    margin: 30px 0 0 20px;
+}
+
+.navegacion-enlaces a {
+    display: inline-block;
+    margin-right: 18px;
+    margin-bottom: 8px;
+    padding: 8px 18px;
+    background: #2980b9;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 15px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.navegacion-enlaces a:hover {
+    background: #1c5980;
+    color: #eaf6ff;
+}
+
+/* Responsividad para móviles */
+@media (max-width: 600px) {
+    form {
+        width: 98%;
+        padding: 1rem 0.5rem;
+    }
+    table {
+        width: 99%;
+        font-size: 14px;
+    }
+    .navegacion-enlaces {
+        margin-left: 5px;
+    }
+    .navegacion-enlaces a {
+        font-size: 14px;
+        padding: 7px 10px;
+        margin-right: 8px;
+    }
+}

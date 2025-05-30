@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Actualizar Sprint</title>
+    <link rel="stylesheet" href="css/ActualizarSprint.css">
+</head>
+<body>
+    <h2>Actualizar Sprint por ID</h2>
+    <form id="formActualizarSprint">
+        <input type="text" id="sprintId" placeholder="ID del sprint" required>
+        <input type="text" id="nombre" placeholder="Nuevo nombre" required>
+        <input type="datetime-local" id="fecha_inicio" placeholder="Fecha de inicio" required>
+        <input type="datetime-local" id="fecha_fin" placeholder="Fecha de fin" required>
+        <button type="submit">Actualizar</button>
+    </form>
+    <p id="mensaje"></p>
+    <h3>Lista de Sprints</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Fecha de Inicio</th>
+                <th>Fecha de Fin</th>
+                <th>Creado</th>
+                <th>Actualizado</th>
+            </tr>
+        </thead>
+        <tbody id="sprintsTabla">
+            <!-- Aquí se mostrarán los sprints -->
+        </tbody>
+    </table>
+    <div class="navegacion-enlaces">
+        <a href="index.html">Volver al Inicio</a>
+        <a href="eliminarSprint.html">Eliminar Sprint</a>
+        <a href="eliminarRetro_items.html">Eliminar retro_items</a>
+        <a href="ActualizarRetro_items.html">Actualizar retro_items</a>
+    </div>
+    <script src="js/actualizarSprint.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Actualizar Retro Item</title>
+    <link rel="stylesheet" href="css/actualizarRetroitems.css">
+</head>
+<body>
+    <h2>Actualizar Retro Item por ID</h2>
+    <form id="formActualizar">
+        <input type="text" id="retroItemId" placeholder="ID del retro_item" required>
+        <input type="text" id="sprint_id" placeholder="Sprint ID" required>
+        <select id="categoria" required>
+            <option value="">Categoría</option>
+            <option value="accion">Acción</option>
+            <option value="logro">Logro</option>
+            <option value="impedimento">Impedimento</option>
+            <option value="comentario">Comentario</option>
+            <option value="otro">Otro</option>
+        </select>
+        <input type="text" id="descripcion" placeholder="Descripción" required>
+        <select id="cumplida">
+            <option value="">¿Cumplida? (solo para acción)</option>
+            <option value="true">Sí</option>
+            <option value="false">No</option>
+        </select>
+        <input type="date" id="fecha_revision" placeholder="Fecha revisión">
+        <button type="submit">Actualizar</button>
+    </form>
+    <p id="mensaje"></p>
+    <h3>Lista de Retro Items</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>sprint_id</th>
+                <th>Categoria</th>
+                <th>Descripcion</th>
+                <th>Cumplida</th>
+                <th>fecha_revision</th>
+                <th>created_at</th>
+                <th>updated_at</th>
+            </tr>
+        </thead>
+        <tbody id="retroItemsTabla">
+            <!-- Aquí se mostrarán los retro_items -->
+        </tbody>
+    </table>
+    <div class="navegacion-enlaces">
+        <a href="index.html">Volver al Inicio</a>
+        <a href="eliminarRetro_items.html">Eliminar retro_items</a>
+    </div>
+    <script src="js/actualizarRetro_items.js"></script>
+</body>
+</html>
