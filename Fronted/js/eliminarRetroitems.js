@@ -1,4 +1,5 @@
 async function eliminarRetroItem(Id) {
+    
     try {
         const respuesta = await fetch(`http://127.0.0.1:8000/api/retro_item/${Id}`, {
             method: 'DELETE',

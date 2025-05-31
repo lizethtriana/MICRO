@@ -1,4 +1,8 @@
 async function eliminarSprint(Id) {
+    if (Id === 1) {
+        alert('No se puede eliminar el Sprint con ID 1');
+        return; 
+    }
     try {
         const respuesta = await fetch(`http://127.0.0.1:8000/api/sprint/${Id}`, {
             method: 'DELETE',
