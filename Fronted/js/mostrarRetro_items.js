@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
             alert('Error inesperado al obtener los retro items');
             console.error(error);
         }
-    }
+    }       
 
     
     function displayRetroItems(retroItems) {
