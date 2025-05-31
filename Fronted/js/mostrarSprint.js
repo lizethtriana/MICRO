@@ -1,19 +1,25 @@
 document.addEventListener('DOMContentLoaded', function() {
     
-    async function fetchSprints() {
-        try {
-            const response = await fetch('http://127.0.0.1:8000/api/sprint/{id}');
-            const result = await response.json();
-            if (response.ok) {
+   async function fetchSprints() {
+    try {
+        const response = await fetch('http://127.0.0.1:8000/api/sprints'); 
+        const result = await response.json();
+        if (response.ok) {
+            // Asegúrate de que result es un array
+            if (Array.isArray(result.data)) {
                 displaySprints(result.data); 
             } else {
-                alert(result.data || 'Error al obtener los sprints');
+                alert('La respuesta no es un array');
+                console.error('Respuesta inesperada:', result);
             }
-        } catch (error) {
-            alert('Error inesperado al obtener los sprints');
-            console.error(error);
+        } else {
+            alert('Error al obtener los retro items');
         }
+    } catch (error) {
+        alert('Error inesperado al obtener los sprints');
+        console.error(error); // Esta línea debe estar aquí
     }
+}
 
     
     function displaySprints(sprints) {
@@ -22,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         sprints.forEach(sprint => {
             const row = document.createElement('tr');
-
 
             const idCell = document.createElement('td');
             idCell.textContent = sprint.id; 
@@ -41,18 +46,16 @@ document.addEventListener('DOMContentLoaded', function() {
             row.appendChild(fechaFinCell);
 
             const creadoCell = document.createElement('td');
-            creadoCell.textContent = sprint.creado; 
+            creadoCell.textContent = sprint.created_at; 
             row.appendChild(creadoCell);
 
             const actualizadoCell = document.createElement('td');
-            actualizadoCell.textContent = sprint.actualizado; 
+            actualizadoCell.textContent = sprint.updated_at; 
             row.appendChild(actualizadoCell);
 
-            
             sprintsTabla.appendChild(row);
         });
     }
 
-   
     fetchSprints();
 });

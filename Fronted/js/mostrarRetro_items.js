@@ -1,19 +1,19 @@
 document.addEventListener('DOMContentLoaded', function () {
   
-    async function fetchRetroItems() {
-        try {
-            const response = await fetch('http://127.0.0.1:8000/api/retro_item'); 
-            const result = await response.json();
-            if (response.ok) {
-                displayRetroItems(result.data); 
-            } else {
-                alert(result.data || 'Error al obtener los retro items');
-            }
-        } catch (error) {
-            alert('Error inesperado al obtener los retro items');
-            console.error(error);
+  async function fetchRetroItems() {
+    try {
+        const response = await fetch('http://127.0.0.1:8000/api/retro_items'); 
+        const result = await response.json();
+        if (response.ok) {
+            displayRetroItems(result.data); 
+        } else {
+            alert('Error al obtener los retro items');
         }
-    }       
+    } catch (error) {
+        alert('Error inesperado al obtener los retro items');
+        console.error(error); 
+    }
+}      
 
     
     function displayRetroItems(retroItems) {
