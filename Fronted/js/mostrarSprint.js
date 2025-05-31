@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     async function fetchSprints() {
         try {
-            const response = await fetch('http://127.0.0.1:8000/api/sprint');
+            const response = await fetch('http://127.0.0.1:8000/api/sprint/{id}');
             const result = await response.json();
             if (response.ok) {
                 displaySprints(result.data); 
